@@ -1,0 +1,61 @@
+
+@import "tufte";
+
+
+html {
+    font-size: 12px;
+}
+
+header {
+    padding-top: 5rem;;
+}
+
+article {
+    padding: 2rem 0rem;
+}
+
+h1.site-title {
+    font-size: 4rem;
+}
+
+h1.site-title a,
+h1.site-title a:link,
+h1.site-title a:visited,
+h1.site-title a:active {
+  text-decoration: none;
+}
+
+h1.site-title a:hover {
+  text-decoration: underline;
+}
+
+nav.main-navigation {
+    text-transform: uppercase;
+    font-size: 1.7rem; // Adjust as needed
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        li {
+            &:first-child {
+                margin-left: 0; // Ensure the first menu item is flush left
+            }
+            margin: 0 1rem; // Space between menu items, adjust as needed
+
+            a {
+                text-decoration: none;
+                color: inherit; // Inherit color
+                padding-bottom: 0.2rem; // For border-bottom effect on hover
+
+                &:hover,
+                &.active {
+                    text-decoration: underline; // Remove underline if you prefer border
+                }
+            }
+        }
+    }
+}
+

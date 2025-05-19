@@ -1,2 +1,24 @@
-<header>
-    </header>
+<header class="site-header">
+    {{/* Site Title / Logo - Link to Home */}}
+    <h1 class="site-title">
+        <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>
+    </h1>
+
+    {{/* Main Menu - Now positioned below the title */}}
+    {{ if .Site.Menus.main }}
+    <nav class="main-navigation">
+        <ul>
+            {{ range .Site.Menus.main.ByWeight }}
+            <li>
+                <a href="{{ .URL | relLangURL }}" title="{{ .Title }}">
+                    {{ .Name }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+    {{ end }}
+
+    <hr />
+
+</header>

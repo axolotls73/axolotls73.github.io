@@ -1,14 +1,10 @@
 ---
-title: "Welcome to My Tufte-Styled Blog" # This title is often overridden by Site.Title in index.html
-subtitle: "A space for thoughts, ideas, and explorations in an elegant format."
-# You can add other front matter here if needed
 ---
 
-<span class="newthought">Welcome!</span> This site is a demonstration of a blog built with [Hugo](https://gohugo.io/) and styled with [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
 
 The design emphasizes readability and a clean, classic aesthetic. Explore the posts to see various elements in action.
 
-### About This Style
+## Header 2
 
 Tufte CSS is known for:
 

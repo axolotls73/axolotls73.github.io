@@ -1,3 +1,42 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+# config.toml
+baseURL = "https://example.org/" # Change this to your site's URL
+languageCode = "en-us"
+title = "Emily Tucker"
+theme = "" # We are not using a theme, but layouts directly
+
+# Enable Goldmark's attribute feature for custom styling (e.g. for newthought)
+[markup.goldmark.renderer]
+  unsafe = true # Set to true if you want to allow raw HTML in markdown for sidenotes/marginnotes
+# [markup.goldmark.extensions]
+#   attributes = true # Allows adding {#id .class} to markdown elements
+
+[params]
+  author = "Your Name"
+  description = "A blog using Tufte CSS and Hugo."
+
+# Pagination
+paginate = 5 # Number of posts per page on list pages
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "Research"
+    url = "/research/" # Ensure you have content at content/research/_index.md or content/research.md
+    weight = 20
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"     # Ensure you have content at content/blog/_index.md (for a list page)
+    weight = 30
+
+# Taxonomies (optional, but good for tags/categories)
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# If you want to use sidenotes/marginnotes directly with HTML in markdown,
+# you might need to set markup.goldmark.renderer.unsafe = true
+# However, a safer approach is to use Hugo shortcodes for these.
+# For now, this setup focuses on the main content styling.
