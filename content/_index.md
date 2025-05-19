@@ -1,8 +1,10 @@
 ---
 ---
 
+{{< socials >}}
 
 The design emphasizes readability and a clean, classic aesthetic. Explore the posts to see various elements in action.
+
 
 ## Header 2
 

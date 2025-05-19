@@ -13,6 +13,11 @@ theme = "" # We are not using a theme, but layouts directly
 [params]
   author = "Your Name"
   description = "A blog using Tufte CSS and Hugo."
+  [params.socials]
+    email = "emily.kat.tucker@gmail.com"
+    github = "axolotls73"
+    orcid = "0000-0002-1234-5678"
+
 
 # Pagination
 paginate = 5 # Number of posts per page on list pages
