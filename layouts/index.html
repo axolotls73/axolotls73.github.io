@@ -1,0 +1,24 @@
+{{/* layouts/index.html */}}
+{{ define "main" }}
+<section>
+    {{/* Display the site title as the main H1 on the homepage */}}
+    <h1>{{ .Site.Title }}</h1>
+
+    {{/* Display the subtitle from config.toml or _index.md front matter */}}
+    {{ if .Params.subtitle }}
+        <p class="subtitle">{{ .Params.subtitle }}</p>
+    {{ else if .Site.Params.description }}
+        <p class="subtitle">{{ .Site.Params.description }}</p>
+    {{ end }}
+
+    {{/* Display the content from content/_index.md */}}
+    {{ if .Content }}
+        <div class="content">
+            {{ .Content }}
+        </div>
+    {{ end }}
+</section>
+
+<hr />
+
+{{ end }}

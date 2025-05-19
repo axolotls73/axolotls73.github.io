@@ -1,0 +1,5 @@
+<footer>
+    <section>
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. {{ with .Site.Params.copyright }}{{ . | safeHTML }}{{ else }}All rights reserved.{{ end }}</p>
+        </section>
+</footer>

@@ -1,0 +1,22 @@
+# .gitignore for Hugo projects
+
+# Output directory
+/public/
+/resources/
+
+# Hugo server log file
+hugo_stats.json
+error.log
+hugo.log
+
+# OS generated files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+
+# Sass cache
+.sass-cache/
+
+# Cache files from certain Hugo versions or modules
+.hugo_build.lock
