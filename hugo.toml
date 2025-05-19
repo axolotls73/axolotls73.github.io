@@ -17,10 +17,12 @@ theme = "" # We are not using a theme, but layouts directly
     email = "emily.kat.tucker@gmail.com"
     github = "axolotls73"
     orcid = "0009-0002-1447-5683"
+    google-scholar = "R1mztXQAAAAJ"
+    ebird = "MjU2OTg5NQ"
 
 
 # Pagination
-paginate = 5 # Number of posts per page on list pages
+# paginate = 3 # Number of posts per page on list pages
 
 [menu]
   [[menu.main]]

@@ -1,10 +1,9 @@
 ---
-title: "My First Post with Tufte CSS"
-subtitle: "An exploration of elegant typography and layout"
+title: "post 2"
+subtitle: "subtitle"
 date: 2025-05-18T10:00:00-06:00
 draft: false
-author: "John Doe"
-tags: ["tufte", "hugo", "css", "typography"]
+tags: ["tufte", "hugo"]
 ---
 
 

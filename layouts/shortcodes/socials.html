@@ -35,6 +35,26 @@
   </div>
   {{ end }}
 
+  {{ $googleScholarPath := "/img/socials/google-scholar.svg" }}
+  {{ if and (index .Site.Params.socials "google-scholar") (fileExists (printf "static%s" $googleScholarPath)) }}
+  <div class="social-icon-item">
+    <a href="https://scholar.google.com/citations?user={{ index .Site.Params.socials "google-scholar" }}" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+        <img src="{{ $googleScholarPath | relURL }}" alt="Google Scholar icon" class="social-icon-svg" />
+      <span class="social-platform-name">Google Scholar</span>
+    </a>
+  </div>
+  {{ end }}
+
+  {{ $ebirdPath := "/img/socials/bird.svg" }}
+  {{ if and (index .Site.Params.socials "ebird") (fileExists (printf "static%s" $ebirdPath)) }}
+  <div class="social-icon-item">
+    <a href="https://ebird.org/profile/{{ index .Site.Params.socials "ebird" }}" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+        <img src="{{ $ebirdPath | relURL }}" alt="bird icon" class="social-icon-svg" />
+      <span class="social-platform-name">eBird</span>
+    </a>
+  </div>
+  {{ end }}
+
 </div>
 </div>
 </p>

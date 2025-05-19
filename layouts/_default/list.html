@@ -1,6 +1,5 @@
 {{ define "main" }}
     <section>
-        <h1>{{ .Title }}</h1>
         {{ if .Content }}
             <div class="content">
                 {{ .Content }}
@@ -8,29 +7,22 @@
         {{ end }}
 
         {{ range .Paginator.Pages }}
-            <section>
-                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                {{ if .Params.subtitle }}
-                    <p class="subtitle">{{ .Params.subtitle }}</p>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{/*  {{ if .Params.subtitle }}
+                <p>{{ .Params.subtitle }}</p>
+            {{ end }}  */}}
+            <p class="list-item-date" style="font-size: 1.1rem; color: #555;">
+                {{ if not .Date.IsZero }}
+                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
                 {{ end }}
-                <p>{{ .Summary }}</p>
-                {{ if .Truncated }}
-                    <a href="{{ .RelPermalink }}">Read more&hellip;</a>
+                {{ with .Params.tags }}
+                    | Tags:
+                    {{ range $index, $tag := . }}
+                        {{- if $index -}}, {{ end -}}
+                        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                    {{ end }}
                 {{ end }}
-                <p style="font-size: 1.1rem; color: #555;">
-                    {{ if not .Date.IsZero }}
-                        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
-                    {{ end }}
-                    {{ with .Params.tags }}
-                        | Tags:
-                        {{ range $index, $tag := . }}
-                            {{- if $index -}}, {{ end -}}
-                            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-                        {{ end }}
-                    {{ end }}
-                </p>
-            </section>
-            <hr />
+            </p>
         {{ end }}
         {{ template "_internal/pagination.html" . }}
     </section>
