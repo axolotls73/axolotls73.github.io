@@ -1,1 +1,4 @@
-sdkfngslkjndgfj
+## Publications
+
+{{< publist >}}
+
