@@ -1,9 +1,9 @@
 ---
-title: "post 2"
-subtitle: "subtitle"
+title: "My First Post with Tufte CSS"
+subtitle: "An exploration of elegant typography and layout"
 date: 2025-05-18T10:00:00-06:00
-draft: false
-tags: ["tufte", "hugo"]
+draft: true
+tags: ["tufte", "hugo", "css", "typography"]
 ---
 
 
