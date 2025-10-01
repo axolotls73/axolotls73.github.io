@@ -13,7 +13,7 @@
         <a href="{{ . }}" target="_blank">[doi]</a>
       {{ end }}
       {{ with .pdf }}
-        <a href="/paper-pdfs/{{ . }}" target="_blank">[pdf]</a>
+        <a href="{{ print "/paper-pdfs/" . | relURL }}" target="_blank">[pdf]</a>
       {{ end }}
     </li>
   {{ end }}
