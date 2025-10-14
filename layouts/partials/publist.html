@@ -3,7 +3,7 @@
     <li>
       <strong>{{ .title }}</strong>
       <br>
-      {{ .authors }}
+      {{ replace .authors "Emily Tucker" "<u>Emily Tucker</u>" | safeHTML }}
       <br>
       <em>({{ .where }})</em>
       {{ with .supplement }}

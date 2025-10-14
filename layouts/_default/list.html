@@ -8,7 +8,7 @@
 
         {{ if gt (len .Paginator.Pages) 0 }}
             {{ range .Paginator.Pages }}
-                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <h3 style="font-style: normal;"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                 {{/*  {{ if .Params.subtitle }}
                     <p>{{ .Params.subtitle }}</p>
                 {{ end }}  */}}

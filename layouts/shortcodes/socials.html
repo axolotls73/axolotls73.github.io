@@ -8,10 +8,18 @@
 <div class="social-icons-container">
 
   {{ $emailIconPath := "/img/socials/email.svg" }}
-  {{ if and (index .Site.Params.socials "email") (fileExists (printf "static%s" $emailIconPath)) }}
+  {{ if and (and (index .Site.Params.socials "emailuser") (index .Site.Params.socials "emaildomain")) (fileExists (printf "static%s" $emailIconPath)) }}
   <div class="social-icon-item">
         <img src="{{ $emailIconPath | relURL }}" alt="Email icon" class="social-icon-svg" />
-      <span class="social-platform-name">{{ index .Site.Params.socials "email" }}</span>
+    <span id="email-container" class="social-platform-name">first . last @gatech.edu</span>
+    <script>
+      (function() {
+        var user = '{{ delimit (collections.Reverse (split .Site.Params.socials.emailuser "")) "" }}';
+        var domain = '{{ .Site.Params.socials.emaildomain }}';
+        var email = user.split('').reverse().join('') + '@' + domain;
+        document.getElementById('email-container').innerHTML = email;
+      })();
+    </script>
   </div>
   {{ end }}
 
