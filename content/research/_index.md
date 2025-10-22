@@ -6,3 +6,4 @@ layout = 'layouts/section/research.html'
 
 {{< publist >}}
 
+{{< pub-copyright >}}
