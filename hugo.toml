@@ -2,6 +2,7 @@
 baseURL = "https://example.org/" # Change this to your site's URL
 languageCode = "en-us"
 title = "Emily Tucker"
+theme = "hugo-tufte-ish"
 
 # Enable Goldmark's attribute feature for custom styling (e.g. for newthought)
 [markup.goldmark.renderer]

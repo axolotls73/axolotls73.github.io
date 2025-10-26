@@ -1,0 +1,3 @@
+[submodule "themes/hugo-tufte-ish"]
+	path = themes/hugo-tufte-ish
+	url = https://github.com/axolotls73/blog-theme.git
