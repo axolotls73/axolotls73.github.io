@@ -131,4 +131,4 @@ It's kind of disappointing not to have found a definitive answer (or a document 
 {{< marginnote >}}
 Probably the first time anyone's called Unicode documents "fun."
 {{< /marginnote >}}
-And I still think that if we can have two camel emojis, we can justify a single opposum emoji!
+And I still think that if we can have two camel emojis, we can justify a single opossum emoji!
