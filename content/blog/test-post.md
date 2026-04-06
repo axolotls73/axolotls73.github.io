@@ -1,54 +1,113 @@
----
-title: "My First Post with Tufte CSS"
-subtitle: "An exploration of elegant typography and layout"
-date: 2025-05-18T10:00:00-06:00
-draft: true
-tags: ["tufte", "hugo", "css", "typography"]
----
++++
+title = "Feature Test"
+date = 2025-05-18
+draft = true
++++
 
+This is a normal paragraph. It sits in the main column, which is around 55% of the page width on desktop. Tufte CSS leaves generous space to the right for margin notes and figures.
 
-## Main Content Section
+Here is a sidenote.{{< sidenote >}}This is a **sidenote** with some `inline code` and [a link](https://example.com).{{< /sidenote >}} And here is a marginnote.{{< marginnote >}}This is a marginnote. It has no number in the text, just the indicator symbol.{{< /marginnote >}} Both should appear in the sidebar on desktop and as numbered footnotes on mobile.
 
-This is a paragraph of text in the main column. Tufte CSS is designed for readability and clarity, drawing inspiration from the work of Edward Tufte. The main content column is typically around 55% of the page width, with generous margins for notes and figures.
+## Typography
 
-Here's a bit more text to see how paragraphs flow. We can also include lists:
+Paragraphs use IBM Plex Serif. *Italic text*, **bold text**, and ***bold italic***. `Inline code` uses IBM Plex Mono.
 
-* An item in an unordered list.
-* Another item, demonstrating list styling.
-    * A sub-item, indented.
-* A final item.
+Here is a blockquote:
 
-And ordered lists:
+> The commonplace book is a way to build a personal library of ideas you can return to.
+>
+> It is both a store of knowledge and a thinking tool.
 
-1.  First item.
-2.  Second item.
-3.  Third item.
+And a blockquote containing a code block:
 
-### A Subsection with Code
+> ```python
+> def greet(name):
+>     return f"Hello, {name}!"
+> ```
 
-Let's look at some inline `code`. It should be styled with a monospace font. For code blocks, we use a `<pre>` tag, which Hugo's Markdown processor will generate from fenced code blocks:
+## Lists
+
+Unordered:
+
+- First item
+- Second item
+    - Nested item
+    - Another nested item
+- Third item
+
+Ordered:
+
+1. First
+2. Second
+3. Third
+
+## Code
+
+Inline: `x = f(y)`. Block:
 
 ```python
-# This is a Python code block
-def hello_tufte():
-    print("Hello, Tufte CSS in Hugo!")
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
 
-hello_tufte()
+print(list(fibonacci(10)))
 ```
 
-The Tufte CSS provides styling for these elements to be clear and distinct from the main prose.
+```bash
+hugo server --themesDir /Users/etucker/hugo-projects --theme blog-theme
+```
 
-## Figures and Captions
+## Figures
 
-Tufte CSS has specific styling for figures and captions.
-## Sidenotes and Margin Notes
+Normal figure with sidebar caption:
 
-Sidenotes and margin notes are a key feature of Tufte's style.
-This paragraph demonstrates where a sidenote or margin note might appear. The CSS you provided includes styles for `.sidenote`, `.marginnote`, and `.sidenote-number`.
+{{< figure
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png"
+  caption="A normal figure. The caption sits in the sidebar on desktop and below the image on mobile."
+  alt="Transparency demonstration"
+>}}
 
-## Blockquotes
+Margin figure (image + caption together in the sidebar on desktop, footnote on mobile):
 
-Blockquotes are also styled:
+{{< figure
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png"
+  type="margin"
+  caption="A margin figure. On mobile this becomes a footnote, image and all."
+  alt="Transparency demonstration"
+>}}
+This paragraph follows the margin figure. On desktop the image and caption appear to the right. On mobile they become a numbered footnote at the bottom.
 
+Full-width figure:
 
-This concludes a brief tour of some elements. Remember to place the `et-book` fonts in your `static/et-book` directory for the typography to render correctly.
+{{< figure
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png"
+  type="full"
+  caption="A full-width figure with a figcaption below."
+  alt="Transparency demonstration"
+>}}
+
+## Sidenotes mixed with marginnotes
+
+A paragraph with multiple notes. Here is the first.{{< sidenote >}}First sidenote.{{< /sidenote >}} Some more text, then a second.{{< sidenote >}}Second sidenote — numbering should be sequential with marginnotes.{{< /sidenote >}} Then a marginnote.{{< marginnote >}}A marginnote between two sidenotes. On mobile it should be numbered in DOM order alongside the sidenotes.{{< /marginnote >}} End of paragraph.
+
+## Long paragraph with mid-paragraph note
+
+Sidenotes that appear mid-paragraph used to break the paragraph flow on mobile. Here is a long paragraph to test that.{{< marginnote >}}This note is in the middle of a long paragraph. On mobile it should appear as a footnote at the bottom, not break the paragraph.{{< /marginnote >}} The rest of the paragraph continues here after the note marker. It should read as a continuous block of text on both desktop and mobile, with the note relegated to the sidebar or footnote section respectively. This sentence is here to make the paragraph long enough to be meaningful.
+
+<!--
+## Math (not yet supported — add KaTeX or MathJax to head.html first)
+
+Inline math: $E = mc^2$
+
+Display math:
+
+$$
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
+$$
+\mathbf{F} = m\mathbf{a}
+$$
+-->

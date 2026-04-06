@@ -56,7 +56,7 @@ In [document L2/10-132 (page 45)](https://www.unicode.org/L2/L2010/10132-emojida
   src="proposed-camels.png"
   label="proposed-camels"
   caption=`The two proposed camels: the first on top, the second below. The second camel is assigned the codepoint it has today.`
-  ind="⊕"
+
   alt="Two proposed camel emojis"
 >}}
 
@@ -66,7 +66,7 @@ In the 2010 document, we can also see the corresponding KDDI and SoftBank icons 
   src="kddi-softbank-camels.png"
   label="old-camels"
   caption=`Original KDDI camel (left) and SoftBank camel (right). らくだ, romanized as "rakuda", of course means "camel" in Japanese. I've also included non-squished versions of both icons (sources: [KDDI](http://emoji.digital/kddi-au/), [SoftBank](https://emojipedia.org/softbank/2006/two-hump-camel)).`
-  ind="⊕"
+
   alt="Two older camel symbols"
 >}}
 
@@ -75,7 +75,7 @@ In the 2010 document, we can also see the corresponding KDDI and SoftBank icons 
   type="margin"
   label="camel-art"
   caption=`I really enjoy this 19th-century Japanese art from [The Met](https://www.metmuseum.org/art/collection/search/77012) of (dromedary) camels being brought to Japan by the Dutch.`
-  ind="⊕"
+
   alt="Japanese art depicting two camels and their Dutch owners"
 >}}
 It's interesting that the KDDI and SoftBank camels are Bactrian camels.

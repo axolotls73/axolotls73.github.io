@@ -1,7 +1,7 @@
 
 - title: "Modular Construction and Optimization of the UZP Sparse Format for SpMV on CPUs"
   authors: "Alonso Rodríguez-Iglesias, Santoshkumar Tongli, Emily Tucker, Louis-Noël Pouchet, Gabriel Rodríguez, Juan Touriño"
-  where: "PLDI'25"
+  where: "PLDI 2025"
   doi: "https://doi.org/10.1145/3729335"
   pdf: "pldi25.pdf"
 
@@ -13,7 +13,7 @@
 
 - title: "Formal Verification of Source-to-Source Transformations for HLS"
   authors: "Louis-Noël Pouchet, Emily Tucker, Niansong Zhang, Hongzheng Chen, Debjit Pal, Gabriel Rodríguez, Zhiru Zhang"
-  where: "FPGA'24"
+  where: "FPGA 2024"
   doi: "https://doi.org/10.1145/3626202.3637563"
   pdf: "fpga24.pdf"
   supplement: "Best Paper Award"
