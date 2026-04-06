@@ -1,5 +1,5 @@
 # config.toml
-baseURL = "https://example.org/" # Change this to your site's URL
+baseURL = "https://example.org/"
 languageCode = "en-us"
 title = "Emily Tucker"
 theme = "blog-theme"
@@ -9,11 +9,6 @@ theme = "blog-theme"
   unsafe = true # Set to true if you want to allow raw HTML in markdown for sidenotes/marginnotes
 # [markup.goldmark.extensions]
 #   attributes = true # Allows adding {#id .class} to markdown elements
-[markup.goldmark.extensions.passthrough]
-  enable = true
-  [markup.goldmark.extensions.passthrough.delimiters]
-    block = [["$$", "$$"]]
-    inline = [["$", "$"]]
 
 [params]
   author = "Emily Tucker"
@@ -27,7 +22,6 @@ theme = "blog-theme"
     google-scholar = "R1mztXQAAAAJ"
     ebird = "MjU2OTg5NQ"
 
-
 # Pagination
 # paginate = 3 # Number of posts per page on list pages
 
@@ -38,19 +32,16 @@ theme = "blog-theme"
     weight = 10
   [[menu.main]]
     name = "Research"
-    url = "/research/" # Ensure you have content at content/research/_index.md or content/research.md
+    url = "/research/"
     weight = 20
   [[menu.main]]
     name = "Blog"
-    url = "/blog/"     # Ensure you have content at content/blog/_index.md (for a list page)
+    url = "/blog/"
     weight = 30
 
-# Taxonomies (optional, but good for tags/categories)
 [taxonomies]
   tag = "tags"
   category = "categories"
 
-# If you want to use sidenotes/marginnotes directly with HTML in markdown,
-# you might need to set markup.goldmark.renderer.unsafe = true
-# However, a safer approach is to use Hugo shortcodes for these.
-# For now, this setup focuses on the main content styling.
+[markup.highlight]
+  noClasses = false

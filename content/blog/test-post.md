@@ -46,18 +46,153 @@ Ordered:
 
 Inline: `x = f(y)`. Block:
 
-```python
-def fibonacci(n):
-    a, b = 0, 1
-    for _ in range(n):
-        yield a
-        a, b = b, a + b
-
-print(list(fibonacci(10)))
-```
-
 ```bash
 hugo server --themesDir /Users/etucker/hugo-projects --theme blog-theme
+```
+
+### Python
+
+```python
+from typing import Iterator
+import math
+
+# Sieve of Eratosthenes
+def primes(limit: int) -> Iterator[int]:
+    """Yield all primes up to limit."""
+    sieve = bytearray([1]) * (limit + 1)
+    sieve[0] = sieve[1] = 0
+    for i in range(2, math.isqrt(limit) + 1):
+        if sieve[i]:
+            sieve[i*i::i] = bytearray(len(sieve[i*i::i]))
+    return (i for i, v in enumerate(sieve) if v)
+
+class Polynomial:
+    def __init__(self, coeffs: list[float]) -> None:
+        self.coeffs = coeffs
+
+    def __call__(self, x: float) -> float:
+        return sum(c * x**i for i, c in enumerate(self.coeffs))
+
+    def __repr__(self) -> str:
+        terms = [f"{c}x^{i}" for i, c in enumerate(self.coeffs) if c != 0.0]
+        return " + ".join(terms) or "0"
+
+p = Polynomial([1.0, 0.0, -3.5, 2.0])
+print(p(1.5))   # 0.875
+```
+
+### C
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_NODES 1024
+
+typedef struct Node {
+    int key;
+    struct Node *left, *right;
+} Node;
+
+/* Allocate and initialise a new BST node */
+static Node *node_new(int key) {
+    Node *n = malloc(sizeof *n);
+    if (!n) { perror("malloc"); exit(EXIT_FAILURE); }
+    n->key = key;
+    n->left = n->right = NULL;
+    return n;
+}
+
+Node *bst_insert(Node *root, int key) {
+    if (!root) return node_new(key);
+    if (key < root->key)      root->left  = bst_insert(root->left,  key);
+    else if (key > root->key) root->right = bst_insert(root->right, key);
+    return root;
+}
+
+int main(void) {
+    int keys[] = {5, 3, 7, 1, 4, 6, 8};
+    Node *root = NULL;
+    for (size_t i = 0; i < sizeof keys / sizeof *keys; i++)
+        root = bst_insert(root, keys[i]);
+    return 0;
+}
+```
+
+### C++
+
+```cpp
+#include <concepts>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+template<std::totally_ordered T>
+class SortedVec {
+public:
+    void insert(T val) {
+        auto it = std::lower_bound(data_.begin(), data_.end(), val);
+        data_.insert(it, std::move(val));
+    }
+
+    [[nodiscard]] bool contains(const T& val) const {
+        return std::binary_search(data_.cbegin(), data_.cend(), val);
+    }
+
+    // Range-based for support
+    auto begin() const { return data_.cbegin(); }
+    auto end()   const { return data_.cend(); }
+
+private:
+    std::vector<T> data_;
+};
+
+int main() {
+    SortedVec<int> sv;
+    for (int x : {4, 1, 7, 2, 9, 3})
+        sv.insert(x);
+    std::cout << std::boolalpha << sv.contains(7) << '\n'; // true
+}
+```
+
+### Rocq
+
+```coq
+Require Import List Arith.
+Import ListNotations.
+
+(* A simple intrinsically-typed expression language *)
+Inductive ty : Type := Nat | Bool.
+
+Inductive val : ty -> Type :=
+  | VNat  : nat  -> val Nat
+  | VBool : bool -> val Bool.
+
+Inductive expr : ty -> Type :=
+  | Lit    : forall t, val t -> expr t
+  | Add    : expr Nat -> expr Nat -> expr Nat
+  | IfThen : forall t, expr Bool -> expr t -> expr t -> expr t.
+
+Fixpoint eval {t : ty} (e : expr t) : val t :=
+  match e with
+  | Lit _ v          => v
+  | Add e1 e2        =>
+      let (VNat n1) := eval e1 in
+      let (VNat n2) := eval e2 in
+      VNat (n1 + n2)
+  | IfThen _ b e1 e2 =>
+      let (VBool b') := eval b in
+      if b' then eval e1 else eval e2
+  end.
+
+Lemma eval_add_comm : forall (e1 e2 : expr Nat),
+    eval (Add e1 e2) = eval (Add e2 e1).
+Proof.
+  intros e1 e2.
+  simpl. destruct (eval e1), (eval e2). simpl.
+  rewrite Nat.add_comm. reflexivity.
+Qed.
 ```
 
 ## Figures
