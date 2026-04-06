@@ -11,8 +11,8 @@ theme = "blog-theme"
 #   attributes = true # Allows adding {#id .class} to markdown elements
 
 [params]
-  author = "Your Name"
-  description = "A blog using Tufte CSS and Hugo."
+  author = "Emily Tucker"
+  description = "Emily Tucker - CS PhD student at Georgia Tech."
   marginNoteInd = "†"
   [params.socials]
     emailuser = "emily.tucker"
