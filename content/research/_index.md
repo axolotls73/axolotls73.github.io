@@ -2,7 +2,7 @@
 layout = 'layouts/section/research.html'
 +++
 
-## Publications
+## Publications {.no-italic}
 
 {{< publist >}}
 
