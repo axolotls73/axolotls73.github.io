@@ -2,6 +2,7 @@
 title = "Feature Test"
 date = 2025-05-18
 draft = true
+math = true
 +++
 
 This is a normal paragraph. It sits in the main column, which is around 55% of the page width on desktop. Tufte CSS leaves generous space to the right for margin notes and figures.
@@ -96,10 +97,11 @@ A paragraph with multiple notes. Here is the first.{{< sidenote >}}First sidenot
 
 Sidenotes that appear mid-paragraph used to break the paragraph flow on mobile. Here is a long paragraph to test that.{{< marginnote >}}This note is in the middle of a long paragraph. On mobile it should appear as a footnote at the bottom, not break the paragraph.{{< /marginnote >}} The rest of the paragraph continues here after the note marker. It should read as a continuous block of text on both desktop and mobile, with the note relegated to the sidebar or footnote section respectively. This sentence is here to make the paragraph long enough to be meaningful.
 
-<!--
-## Math (not yet supported — add KaTeX or MathJax to head.html first)
+## Math
 
 Inline math: $E = mc^2$
+
+Consider a probability space $(\Omega, \mathcal{F}, \mathbb{P})$ and a random variable $X : \Omega \to \mathbb{R}$. The expected value $\mathbb{E}[X] = \int_\Omega X \, d\mathbb{P}$ exists whenever $\mathbb{E}[|X|] < \infty$. For two random variables $X$ and $Y$ with joint density $f_{X,Y}(x, y)$, the covariance $\mathrm{Cov}(X, Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$ measures their linear dependence. By the Cauchy–Schwarz inequality, $|\mathrm{Cov}(X,Y)|^2 \leq \mathrm{Var}(X)\,\mathrm{Var}(Y)$, and the Pearson correlation $\rho = \mathrm{Cov}(X,Y) / \sqrt{\mathrm{Var}(X)\mathrm{Var}(Y)}$ satisfies $-1 \leq \rho \leq 1$. When $X \sim \mathcal{N}(\mu, \sigma^2)$, the moment generating function is $M_X(t) = e^{\mu t + \sigma^2 t^2 / 2}$ for all $t \in \mathbb{R}$.
 
 Display math:
 
@@ -110,4 +112,3 @@ $$
 $$
 \mathbf{F} = m\mathbf{a}
 $$
--->

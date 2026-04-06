@@ -9,6 +9,11 @@ theme = "blog-theme"
   unsafe = true # Set to true if you want to allow raw HTML in markdown for sidenotes/marginnotes
 # [markup.goldmark.extensions]
 #   attributes = true # Allows adding {#id .class} to markdown elements
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [["$$", "$$"]]
+    inline = [["$", "$"]]
 
 [params]
   author = "Emily Tucker"
