@@ -1,4 +1,10 @@
 
+- title: "Practical Formal Verification for MLIR Programs"
+  authors: "Emily Tucker, Louis-Noël Pouchet, Erika Hunhoff, Stephen Neuendorffer, Erwei Wang"
+  where: "arXiv"
+  doi: "https://doi.org/10.48550/arXiv.2605.01124"
+  pdf: "arxiv26.pdf"
+
 - title: "Modular Construction and Optimization of the UZP Sparse Format for SpMV on CPUs"
   authors: "Alonso Rodríguez-Iglesias, Santoshkumar Tongli, Emily Tucker, Louis-Noël Pouchet, Gabriel Rodríguez, Juan Touriño"
   where: "PLDI 2025"
