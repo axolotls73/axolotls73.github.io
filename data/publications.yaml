@@ -1,3 +1,6 @@
+- title: "Practical Correctness and Equivalence Checking for MLIR"
+  authors: "Emily Tucker, Louis-Noël Pouchet, Erika Hunhoff, Stephen Neuendorffer, Erwei Wang"
+  where: "PACT 2026"
 
 - title: "Practical Formal Verification for MLIR Programs"
   authors: "Emily Tucker, Louis-Noël Pouchet, Erika Hunhoff, Stephen Neuendorffer, Erwei Wang"
