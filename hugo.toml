@@ -10,6 +10,13 @@ theme = "blog-theme"
 # [markup.goldmark.extensions]
 #   attributes = true # Allows adding {#id .class} to markdown elements
 
+# Leave LaTeX between these delimiters untouched; render-passthrough.html turns it into MathML
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)'], ['$', '$']]
+
 [params]
   author = "Emily Tucker"
   description = "Emily Tucker - CS PhD student at Georgia Tech."
